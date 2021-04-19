@@ -1,0 +1,62 @@
+<div id="filtro" class="container-fluid">
+  <div class="text-left p-3 my-3 ">
+    <h2>Ordenar</h2>
+    <hr class="separador">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h5>Ordenar por nombre</h5>
+          <button type="button" class="btn btn-light" (click)="ordenacion(1)">A-Z</button>
+          <button type="button" class="btn btn-light" (click)="ordenacion(2)" >Z-A</button>
+        </div>
+        <div class="col-sm-4">
+          <h5>Ordenar por calificación</h5>
+          <button type="button" class="btn btn-light" (click)="ordenacion(3)">Mayor a menor</button>
+          <button type="button" class="btn btn-light" (click)="ordenacion(4)">Menor a mayor</button>
+        </div>
+        <div class="col-sm-4">
+          <h5>Ordenar por precio</h5>
+          <button type="button" class="btn btn-light" (click)="ordenacion(5)">Mayor a menor</button>
+          <button type="button" class="btn btn-light" (click)="ordenacion(6)">Menor a mayor</button>
+        </div>
+      </div>
+    </div>
+    <h2>Filtrar</h2>
+    <hr class="separador">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+      <input type="text" class="form-control" placeholder="Busca el nombre de un paquete" aria-label="Username" aria-describedby="basic-addon1" name="aBuscar" [(ngModel)]="aBuscar">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6" *ngFor="let paquete of paquetes | filtrar:aBuscar | ordenar:orden ; let i=index; ">
+    <div class="card cartas">
+      <div class="card-header">
+        <h5>Paquete</h5>
+      </div>
+      <div class="card-body">
+        <img class="img-fluid" src="../../../assets/img-paquete/{{paquete.imagen1}}" width="190px">
+        <img class="img-fluid" src="../../../assets/img-paquete/{{paquete.imagen2}}" width="200px">
+        <h3 class="card-title">{{paquete.nombre}}</h3>
+        <p class="card-text">{{paquete.localizacion}}</p>
+        <p class="card-text"><i class="fas fa-info-circle"></i> {{paquete.caracteristica}}</p>
+        <hr>
+        Calificación: <h5 style="background-color: #FFDE59; padding: 5px; margin-right: 110px;">{{paquete.calificacion.toFixed(1)}}</h5>
+
+        Número de calificaciones: <h5 style="background-color: #FFDE59; padding: 5px;">{{paquete.numCalif}}</h5>
+        <br>
+        ¿Cuál es tu calificación para este paquete?<br>
+        <button  type="button" class="btn btn-danger" (click)="decremento(i)">-</button>
+        <h5>{{paquete.subCalificacion}}</h5>
+        <button type="button" class="btn btn-success" (click)="incremento(i)">+</button>
+        <button href="#" class="btn btn-primary" style="margin-left: 40px;" (click)="calificar(i)">Calificar</button>
+      </div>
+      <div class="card-footer">
+        Precio por noche
+        <h2 class="card-text">${{paquete.precio}}</h2>
+      </div>
+    </div>
+  </div>
+</div>

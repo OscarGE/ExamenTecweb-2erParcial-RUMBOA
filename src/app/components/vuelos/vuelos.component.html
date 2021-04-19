@@ -1,0 +1,53 @@
+<div id="filtro" class="container-fluid">
+  <div class="text-left p-3 my-3 ">
+    <h2>Ordenar</h2>
+    <hr class="separador">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h5>Ordenar por ciudad</h5>
+          <button type="button" class="btn btn-light" (click)="ordenacion(1)">A-Z</button>
+          <button type="button" class="btn btn-light" (click)="ordenacion(2)" >Z-A</button>
+        </div>
+        <div class="col-sm-4">
+          <h5>Ordenar por horas de vuelos</h5>
+          <button type="button" class="btn btn-light" (click)="ordenacion(3)">Mayor a menor</button>
+          <button type="button" class="btn btn-light" (click)="ordenacion(4)">Menor a mayor</button>
+        </div>
+        <div class="col-sm-4">
+          <h5>Ordenar por precio</h5>
+          <button type="button" class="btn btn-light" (click)="ordenacion(5)">Mayor a menor</button>
+          <button type="button" class="btn btn-light" (click)="ordenacion(6)">Menor a mayor</button>
+        </div>
+      </div>
+    </div>
+    <h2>Filtrar</h2>
+    <hr class="separador">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+      <input type="text" class="form-control" placeholder="Busca el nombre de una ciudad" aria-label="Username" aria-describedby="basic-addon1" name="aBuscar" [(ngModel)]="aBuscar">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6" *ngFor="let vuelo of vuelos | filtrar:aBuscar | ordenar:orden ; let i=index; ">
+    <div class="card cartas">
+      <div class="card-header">
+        <h5>Vuelo</h5>
+      </div>
+      <div class="card-body">
+        <img class="img-fluid" src="../../../assets/img-vuelo/{{vuelo.imagen}}" width="280px">
+        <h3 class="card-title">{{vuelo.nombre}}</h3>
+        <p class="card-text">{{vuelo.localizacion}}</p>
+        <hr>
+        Horas de vuelos: <h5 style="background-color: #FFDE59; padding: 5px; margin-right: 110px;">{{vuelo.calificacion}}</h5>
+        <br>
+      </div>
+      <div class="card-footer">
+        Precio de ida y vuelta
+        <h2 class="card-text">${{vuelo.precio}}</h2>
+      </div>
+    </div>
+  </div>
+</div>

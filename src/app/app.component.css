@@ -1,0 +1,51 @@
+#cabecera{
+  background: #FFFFFF;
+  margin-bottom: 0px;
+}
+#cabecera img{
+  width: 180px;
+  margin-left: 30px;
+  margin-right: 130px;
+}
+#cabecera .titulo{
+  width: 250px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+#menu{
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+#menu a{
+  margin-right: 40px;
+}
+#menu i{
+  font-size: 40px;
+}
+
+#contenido{
+  background-color: #7ed957;
+}
+
+#pie{
+  background: #004AAD;
+  color: #FFFFFF;
+}
+#pie img{
+  display: block;
+  margin: auto;
+}
+#pie h3{
+  font-size: 50px;
+  color: #000000;
+}
+#pie a{
+  text-decoration: none;
+  color: #000000;
+}
+#pie a:hover{
+  color: #FFFFFF;
+}

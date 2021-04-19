@@ -1,0 +1,236 @@
+<div id="info" class="container-fluid">
+  <div class="text-left p-3 my-3 ">
+    <h2>Adquiere un seguro de vida</h2>
+    <hr class="separador">
+    <p>Otra opción que brinda RUMBO A es que el viajero adquiera un seguro de viaje a precios económicos y con asistencias como atención médica, auxilio en pérdida de documentos, ayuda en la localización de equipaje, medicamentos, seguro por accidentes, garantía por cancelación de viaje, traslado de un familiar, entre otras coberturas que dependen del paquete y el destino.</p>
+  </div>
+</div>
+
+<div id="info" class="container-fluid">
+  <div class="text-left p-3 my-3 ">
+    <img src="../../../assets/img-logos/logo-UA.jpg"><h2>Asistencia Plata Plus</h2>
+    <hr class="separador">
+    <div class="container">
+      <div class="row" >
+        <div class="col-sm-9">
+          <p class="etiqueta1">Del 04 may. 2021 hasta 20 may. 2021</p>
+          <p class="etiqueta2"><i class="fas fa-info-circle"></i> Reservación flexible</p>
+          <p class="etiqueta3"><i class="fas fa-check"></i> Cancelación hasta 24 hs antes</p><br>
+          <p class="etiqueta4"><i class="fas fa-check"></i> Cobertura médica ante coronavirus y reintegro por gastos de cancelación o interrupción del viaje</p><br>
+          <p class="etiqueta4"><i class="fas fa-check"></i> Asistencia médica ante enfermedad o accidente hasta US$ 50.000</p><br>
+          <p class="etiqueta4"><i class="fas fa-check"></i>   Gastos de hotel en caso de cuarentena en destino hasta US$ 500</p><br>
+          <p class="etiqueta4"><i class="fas fa-check"></i> Compensación por pérdida de equipaje hasta US$ 1.000</p>
+        </div>
+        <div class="col-sm-3" id="info2">
+          <p class="etiqueta5">Precio por persona</p>
+          <p class="etiqueta4">MXN$</p>
+          <p class="etiqueta6">1,706</p>
+        </div>
+      </div>
+    </div>
+    <hr class="separador">
+    <form [formGroup]="form" (ngSubmit)="save($event)">
+      <div class="mb-3" id="formulario">
+        <div class="container">
+          <p class="etiqueta7">Datos personales</p>
+          <div class="row">
+            <div class="col-sm">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre">
+              <div *ngIf="form.get('nombre').errors && form.get('nombre').touched">
+                <p class="msjErr" *ngIf="form.get('nombre').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('nombre').hasError('maxlength')">
+                  El máximo de este campo es de 50 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('nombre').hasError('minlength')">
+                  El mínimo de este campo es de 3 caracteres
+                </p>
+              </div>
+            </div>
+            <div class="col-sm">
+              <label class="form-label">Primer apellido</label>
+              <input type="text" class="form-control" formControlName="apellido1">
+              <div *ngIf="form.get('apellido1').errors && form.get('apellido1').touched">
+                <p class="msjErr" *ngIf="form.get('apellido1').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('apellido1').hasError('maxlength')">
+                  El máximo de este campo es de 50 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('apellido1').hasError('minlength')">
+                  El mínimo de este campo es de 3 caracteres
+                </p>
+              </div>
+            </div>
+            <div class="col-sm">
+              <label class="form-label">Segundo apellido</label>
+              <input type="text" class="form-control" formControlName="apellido2">
+              <div *ngIf="form.get('apellido2').errors && form.get('apellido2').touched">
+                <p class="msjErr" *ngIf="form.get('apellido2').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('apellido2').hasError('maxlength')">
+                  El máximo de este campo es de 50 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('apellido2').hasError('minlength')">
+                  El mínimo de este campo es de 3 caracteres
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <label class="form-label">Teléfono</label>
+              <input type="text" class="form-control" formControlName="telefono">
+              <div *ngIf="form.get('telefono').errors && form.get('telefono').touched">
+                <p class="msjErr" *ngIf="form.get('telefono').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('telefono').hasError('maxlength')">
+                  El máximo de este campo es de 12 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('telefono').hasError('minlength')">
+                  El mínimo de este campo es de 3 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('telefono').hasError('pattern')">
+                  Este campo acepta solo números
+                </p>
+              </div>
+            </div>
+            <div class="col-sm">
+              <label class="form-label">Otro teléfono</label>
+              <input type="text" class="form-control" formControlName="telefono2">
+              <div *ngIf="form.get('telefono2').errors && form.get('telefono2').touched">
+                <p class="msjErr" *ngIf="form.get('telefono2').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('telefono2').hasError('maxlength')">
+                  El máximo de este campo es de 12 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('telefono2').hasError('minlength')">
+                  El mínimo de este campo es de 3 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('telefono').hasError('pattern')">
+                  Este campo acepta solo números
+                </p>
+              </div>
+            </div>
+            <div class="col-sm">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-control" formControlName="email">
+              <div *ngIf="form.get('email').errors && form.get('email').touched">
+                <p class="msjErr" *ngIf="form.get('email').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('email').hasError('maxlength')">
+                  El máximo de este campo es de 50 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('email').hasError('minlength')">
+                  El mínimo de este campo es de 8 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('email').hasError('email')">
+                  No es una dirección de correo valida
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="etiqueta7">Datos del viaje</p>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <label class="form-label">Fecha inicio del viaje</label><br>
+                <select class="form-select" aria-label="Default select example" formControlName="diaI">
+                  <option selected >Día</option>
+                  <option *ngFor="let numero of numeros">{{numero}}</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" formControlName="mesI">
+                  <option selected>Mes</option>
+                  <option *ngFor="let mes of meses">{{mes}}</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" formControlName="anoI">
+                  <option selected>Año</option>
+                  <option *ngFor="let ano of anos">{{ano}}</option>
+                </select>
+              </div>
+              <div class="col-sm">
+                <label class="form-label">Fecha fin del viaje</label><br>
+                <select class="form-select" aria-label="Default select example" formControlName="diaF">
+                  <option selected>Día</option>
+                  <option *ngFor="let numero of numeros">{{numero}}</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" formControlName="mesF">
+                  <option selected>Mes</option>
+                  <option *ngFor="let mes of meses">{{mes}}</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" formControlName="anoF">
+                  <option selected>Año</option>
+                  <option *ngFor="let ano of anos">{{ano}}</option>
+                </select>
+              </div>
+            </div><br>
+            <label class="form-label">Nº total de personas que viajan</label>&nbsp;
+            <input type="number" id="tentacles" name="tentacles" min="1" max="10" formControlName="numPersonas">
+            <div *ngIf="form.get('numPersonas').errors && form.get('numPersonas').touched">
+                <p class="msjErr" *ngIf="form.get('numPersonas').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('numPersonas').hasError('max')">
+                  El máximo números de personas es de 10
+                </p>
+                <p class="msjErr" *ngIf="form.get('numPersonas').hasError('min')">
+                  El mínimo números de personas es de 10
+                </p>
+                <p class="msjErr" *ngIf="form.get('numPersonas').hasError('pattern')">
+                  Este campo acepta solo números
+                </p>
+              </div>
+            <br><br>
+            <label class="form-label">Lugar de origen</label>&nbsp;
+            <input type="text" class="form-control input1 w-75" formControlName="origen">
+            <div *ngIf="form.get('origen').errors && form.get('origen').touched">
+                <p class="msjErr" *ngIf="form.get('origen').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('origen').hasError('maxlength')">
+                  El máximo de este campo es de 100 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('origen').hasError('minlength')">
+                  El mínimo de este campo es de 4 caracteres
+                </p>
+              </div>
+            <br><br>
+            <label class="form-label">Lugar de destino</label>&nbsp;
+            <input type="text" class="form-control input1 w-75" formControlName="destino">
+            <div *ngIf="form.get('destino').errors && form.get('destino').touched">
+                <p class="msjErr" *ngIf="form.get('destino').hasError('required')">
+                  Este campo es requerido
+                </p>
+                <p class="msjErr" *ngIf="form.get('destino').hasError('maxlength')">
+                  El máximo de este campo es de 100 caracteres
+                </p>
+                <p class="msjErr" *ngIf="form.get('destino').hasError('minlength')">
+                  El mínimo de este campo es de 4 caracteres
+                </p>
+              </div>
+            <br><br>
+            <label class="form-label">Tipo de transporte de viaje</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-label">Avión</label>&nbsp;<input type="radio" value="Avión" name="transporte" formControlName="transporte">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-label">Crusero</label>&nbsp;<input type="radio" value="Crusero" name="transporte" formControlName="transporte">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+           <label class="form-label">Autobús</label>&nbsp;<input type="radio" value="Autobús" name="transporte" formControlName="transporte">
+           &nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+           <input type="checkbox" formControlName="condiciones"> &nbsp;
+           <label class="form-label">Aceptar política de privacidad</label>
+          </div>
+        </div>
+          <div class="container text-center">
+            <button type="submit" [disabled]="form.invalid" class="btn btn-warning btnE ">Enviar</button>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>
